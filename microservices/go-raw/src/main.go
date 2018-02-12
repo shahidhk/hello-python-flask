@@ -13,14 +13,14 @@ func sayHello(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Hello from Golang on Hasura")
 }
 
-// func sayPongJSON(w http.ResponseWriter, r *http.Request) {
-// 	w.Header().Set("Content-Type", "application/json")
-// 	fmt.Fprint(w, `{"message":"pong"}`)
-// }
+func sayPongJSON(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	fmt.Fprint(w, `{"message":"pong"}`)
+}
 
 func main() {
 	http.HandleFunc("/", sayHello)
-	// http.HandleFunc("/ping", sayPongJSON)
+	http.HandleFunc("/ping", sayPongJSON)
 
 	http.HandleFunc("/get_articles", getArticles)
 	http.HandleFunc("/profile", getProfile)
