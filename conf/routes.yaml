@@ -169,5 +169,13 @@ hello:
     upstreamServicePath: /
     upstreamServicePort: 80
     corsPolicy: allow_all
-
+    
+hello-golang:
+  /:
+    upstreamService:
+      name: golang
+      namespace: '{{ cluster.metadata.namespaces.user }}'
+    upstreamServicePath: /
+    upstreamServicePort: 80
+    corsPolicy: allow_all
 # To see actual endpoints for these routes, use `$ hasura microserivce list`
