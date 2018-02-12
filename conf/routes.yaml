@@ -173,7 +173,7 @@ hello:
 hello-golang:
   /:
     upstreamService:
-      name: golang
+      name: go-raw
       namespace: '{{ cluster.metadata.namespaces.user }}'
     upstreamServicePath: /
     upstreamServicePort: 80
