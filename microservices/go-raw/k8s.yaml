@@ -5,9 +5,9 @@ items:
   metadata:
     creationTimestamp: null
     labels:
-      app: app
+      app: golang
       hasuraService: custom
-    name: app
+    name: golang
     namespace: '{{ cluster.metadata.namespaces.user }}'
   spec:
     replicas: 1
@@ -16,12 +16,12 @@ items:
       metadata:
         creationTimestamp: null
         labels:
-          app: app
+          app: golang
       spec:
         containers:
         - image: hasura/base-git-image:0.7
           imagePullPolicy: IfNotPresent
-          name: app
+          name: golang
           env:
           - name: POSTGRES_HOSTNAME
             value: postgres.{{ cluster.metadata.namespaces.hasura }}
@@ -49,9 +49,9 @@ items:
   metadata:
     creationTimestamp: null
     labels:
-      app: app
+      app: golang
       hasuraService: custom
-    name: app
+    name: golang
     namespace: '{{ cluster.metadata.namespaces.user }}'
   spec:
     ports:
@@ -59,7 +59,7 @@ items:
       protocol: TCP
       targetPort: 8080
     selector:
-      app: app
+      app: golang
     type: ClusterIP
   status:
     loadBalancer: {}
