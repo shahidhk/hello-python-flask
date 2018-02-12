@@ -22,8 +22,8 @@ remotes:
         dockerfile: microservices/app/Dockerfile
         path: microservices/app
 
-    '{{ cluster.metadata.namespaces.user }}.golang':
-      golang:
+    '{{ cluster.metadata.namespaces.user }}.go-raw':
+      go-raw:
         dockerfile: microservices/go-raw/Dockerfile
         path: microservices/go-raw
     # Add output of `hasura conf generate-remote` below this line
